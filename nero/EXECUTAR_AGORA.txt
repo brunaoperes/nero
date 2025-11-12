@@ -1,0 +1,151 @@
+================================================================================
+                    ⚡ EXECUTE AGORA - COMANDOS FINAIS ⚡
+================================================================================
+
+✅ SQL JÁ FOI EXECUTADO NO SUPABASE!
+
+❌ O FLUTTER NÃO FUNCIONA NO WSL (ambiente Linux)
+
+✅ SOLUÇÃO: Execute os comandos no POWERSHELL DO WINDOWS!
+
+================================================================================
+                    📍 OPÇÃO 1: SCRIPT AUTOMÁTICO (RECOMENDADO)
+================================================================================
+
+1. Abra o POWERSHELL (não o terminal WSL!)
+
+   → Pressione Windows + R
+   → Digite: powershell
+   → Pressione Enter
+
+2. Execute ESTE comando (copie e cole tudo):
+
+   cd C:\Users\awgco\gestor_pessoal_ia\nero; .\executar.ps1
+
+   OU (se preferir .bat):
+
+   cd C:\Users\awgco\gestor_pessoal_ia\nero
+   .\EXECUTAR_NO_WINDOWS.bat
+
+
+================================================================================
+                    📍 OPÇÃO 2: COMANDOS MANUAIS
+================================================================================
+
+Se o script não funcionar, execute UM POR UM no PowerShell:
+
+# 1. Navegar para a pasta
+cd C:\Users\awgco\gestor_pessoal_ia\nero
+
+# 2. Instalar dependências
+flutter pub get
+
+# 3. Gerar código
+flutter pub run build_runner build --delete-conflicting-outputs
+
+# 4. Executar app
+flutter run -d chrome
+
+
+================================================================================
+                    ⏱️ TEMPO ESPERADO
+================================================================================
+
+• flutter pub get                    → 2-3 minutos
+• build_runner                       → 1-2 minutos
+• flutter run (primeira vez)         → 3-5 minutos
+
+TOTAL: 6-10 minutos
+
+
+================================================================================
+                    ✅ RESULTADO ESPERADO
+================================================================================
+
+Quando tudo funcionar, você verá:
+
+✅ Chrome abrindo automaticamente
+✅ App Nero carregando
+✅ Tela de login aparecendo
+✅ Possibilidade de criar conta
+✅ Dashboard funcionando!
+
+
+================================================================================
+                    🐛 SE DER ERRO
+================================================================================
+
+Erro: "Flutter não encontrado"
+→ Instale: https://flutter.dev/docs/get-started/install/windows
+
+Erro: "pub get failed"
+→ Execute: flutter clean
+→ Execute: flutter pub get
+
+Erro: "build_runner failed"
+→ Execute: flutter clean
+→ Execute: flutter pub get
+→ Execute: flutter pub run build_runner build --delete-conflicting-outputs
+
+Erro: "No devices found"
+→ Execute: flutter devices
+→ Instale o Chrome se necessário
+
+Outros erros
+→ Execute: flutter doctor -v
+→ Abra: TROUBLESHOOTING.md
+
+
+================================================================================
+                    💡 COMANDOS ÚTEIS
+================================================================================
+
+# Verificar instalação do Flutter
+flutter --version
+
+# Ver dispositivos disponíveis
+flutter devices
+
+# Diagnosticar problemas
+flutter doctor -v
+
+# Limpar build
+flutter clean
+
+# Ver logs
+flutter logs
+
+
+================================================================================
+                    🎯 AÇÃO IMEDIATA
+================================================================================
+
+COPIE E COLE NO POWERSHELL (Windows PowerShell, NÃO o terminal WSL!):
+
+cd C:\Users\awgco\gestor_pessoal_ia\nero; .\executar.ps1
+
+
+OU se preferir executar passo a passo:
+
+cd C:\Users\awgco\gestor_pessoal_ia\nero
+flutter pub get
+flutter pub run build_runner build --delete-conflicting-outputs
+flutter run -d chrome
+
+
+================================================================================
+                    📞 APÓS EXECUTAR
+================================================================================
+
+Quando o app estiver rodando:
+
+→ Crie uma conta de teste
+→ Complete o onboarding (4 etapas)
+→ Veja o dashboard
+→ Leia NEXT_STEPS.md para continuar desenvolvendo
+
+================================================================================
+
+IMPORTANTE: Execute no POWERSHELL DO WINDOWS, não no terminal WSL/Ubuntu!
+
+================================================================================

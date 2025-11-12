@@ -1,0 +1,103 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║                   🚀 COMO EXECUTAR O PROJETO NERO 🚀                      ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+⚠️  ATENÇÃO: O Flutter NÃO FUNCIONA no terminal WSL (Linux)!
+
+✅  SOLUÇÃO: Execute no PowerShell do WINDOWS!
+
+═══════════════════════════════════════════════════════════════════════════
+
+📋 O QUE JÁ FOI FEITO:
+
+  ✅ Código Flutter criado (90+ arquivos)
+  ✅ Documentação completa (19 arquivos)
+  ✅ Arquivo .env configurado com Supabase
+  ✅ SQL executado no Supabase
+  ✅ Scripts de execução criados
+
+═══════════════════════════════════════════════════════════════════════════
+
+⏳ O QUE VOCÊ PRECISA FAZER AGORA:
+
+  1️⃣  Abrir PowerShell do Windows (NÃO o terminal WSL!)
+  2️⃣  Executar o script automático
+  3️⃣  Aguardar o Chrome abrir com o app
+
+═══════════════════════════════════════════════════════════════════════════
+
+🎯 COMO FAZER:
+
+1. Feche este terminal WSL
+
+2. Abra o PowerShell do Windows:
+   - Pressione: Windows + R
+   - Digite: powershell
+   - Pressione: Enter
+
+3. No PowerShell, cole este comando:
+
+   cd C:\Users\awgco\gestor_pessoal_ia\nero; .\executar.ps1
+
+4. Aguarde 6-10 minutos
+
+5. O Chrome vai abrir automaticamente!
+
+═══════════════════════════════════════════════════════════════════════════
+
+🔄 ALTERNATIVA (se .ps1 não funcionar):
+
+   cd C:\Users\awgco\gestor_pessoal_ia\nero
+   .\EXECUTAR_NO_WINDOWS.bat
+
+═══════════════════════════════════════════════════════════════════════════
+
+📱 COMANDOS MANUAIS (se os scripts não funcionarem):
+
+   cd C:\Users\awgco\gestor_pessoal_ia\nero
+   flutter pub get
+   flutter pub run build_runner build --delete-conflicting-outputs
+   flutter run -d chrome
+
+═══════════════════════════════════════════════════════════════════════════
+
+✅ RESULTADO ESPERADO:
+
+  → Chrome abre automaticamente
+  → Tela de login do Nero aparece
+  → Você pode criar conta e testar!
+
+═══════════════════════════════════════════════════════════════════════════
+
+🐛 SE DER ERRO "Flutter não encontrado":
+
+   Instale o Flutter: https://flutter.dev/docs/get-started/install/windows
+
+═══════════════════════════════════════════════════════════════════════════
+
+📞 ARQUIVOS DE AJUDA:
+
+  • ABRA_ISTO.md           ← Explicação completa
+  • EXECUTAR_AGORA.txt     ← Comandos detalhados
+  • TROUBLESHOOTING.md     ← Solução de problemas
+  • executar.ps1           ← Script PowerShell
+  • EXECUTAR_NO_WINDOWS.bat ← Script .bat
+
+═══════════════════════════════════════════════════════════════════════════
+
+💡 RESUMO:
+
+  WSL (Linux) ❌  → Não funciona
+  PowerShell ✅   → Funciona!
+
+═══════════════════════════════════════════════════════════════════════════
+
+🎯 AÇÃO IMEDIATA:
+
+  1. Feche este terminal
+  2. Abra PowerShell do Windows
+  3. Execute: cd C:\Users\awgco\gestor_pessoal_ia\nero; .\executar.ps1
+
+═══════════════════════════════════════════════════════════════════════════

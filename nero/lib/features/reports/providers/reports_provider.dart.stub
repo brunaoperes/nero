@@ -1,0 +1,71 @@
+import 'dart:io';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../domain/models/report_config.dart';
+
+/// TODO: Implementar quando os providers de tasks e transactions estiverem disponíveis
+/// Por enquanto, providers stub para não quebrar a compilação
+
+/// Provider para configuração do relatório
+final reportConfigProvider = StateProvider<ReportConfig?>((ref) => null);
+
+/// Provider para status de geração
+final reportGenerationStatusProvider = StateProvider<ReportGenerationStatus>((ref) {
+  return ReportGenerationStatus.idle;
+});
+
+/// Status de geração de relatório
+enum ReportGenerationStatus {
+  idle,
+  generating,
+  success,
+  error,
+}
+
+/// Provider do notifier de geração de relatórios
+final reportGenerationProvider =
+    StateNotifierProvider<ReportGenerationNotifier, AsyncValue<File?>>((ref) {
+  return ReportGenerationNotifier(ref);
+});
+
+/// Notifier para geração de relatórios
+class ReportGenerationNotifier extends StateNotifier<AsyncValue<File?>> {
+  final Ref _ref;
+
+  ReportGenerationNotifier(this._ref) : super(const AsyncValue.data(null));
+
+  /// Gera relatório de tarefas em PDF
+  Future<File?> generateTasksReport() async {
+    // TODO: Implementar quando TaskModel e PDFService estiverem disponíveis
+    throw UnimplementedError('Relatórios ainda não implementados');
+  }
+
+  /// Gera relatório de finanças em PDF
+  Future<File?> generateFinanceReport() async {
+    // TODO: Implementar quando TransactionModel e PDFService estiverem disponíveis
+    throw UnimplementedError('Relatórios ainda não implementados');
+  }
+
+  /// Gera relatório consolidado em PDF
+  Future<File?> generateConsolidatedReport() async {
+    // TODO: Implementar quando modelos e PDFService estiverem disponíveis
+    throw UnimplementedError('Relatórios ainda não implementados');
+  }
+
+  /// Gera relatório de tarefas em Excel
+  Future<File?> generateTasksExcel() async {
+    // TODO: Implementar quando TaskModel e ExcelService estiverem disponíveis
+    throw UnimplementedError('Relatórios ainda não implementados');
+  }
+
+  /// Gera relatório de finanças em Excel
+  Future<File?> generateFinanceExcel() async {
+    // TODO: Implementar quando TransactionModel e ExcelService estiverem disponíveis
+    throw UnimplementedError('Relatórios ainda não implementados');
+  }
+
+  /// Gera relatório consolidado em Excel
+  Future<File?> generateConsolidatedExcel() async {
+    // TODO: Implementar quando modelos e ExcelService estiverem disponíveis
+    throw UnimplementedError('Relatórios ainda não implementados');
+  }
+}

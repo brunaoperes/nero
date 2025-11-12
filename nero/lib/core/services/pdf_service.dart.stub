@@ -1,0 +1,40 @@
+import 'dart:io';
+
+/// TODO: Implementar quando o package PDF estiver configurado corretamente
+/// e os modelos TaskModel e TransactionModel estiverem disponíveis
+
+/// Serviço de geração de PDFs (STUB)
+class PDFService {
+  /// Gera relatório de tarefas em PDF
+  static Future<File> generateTasksReport({
+    required String title,
+    String? period,
+    Map<String, String>? filters,
+    required double totalIncome,
+    required double totalExpenses,
+  }) async {
+    throw UnimplementedError('PDFService ainda não implementado');
+  }
+
+  /// Gera relatório financeiro em PDF
+  static Future<File> generateFinanceReport({
+    required String title,
+    String? period,
+    Map<String, String>? filters,
+    required double totalIncome,
+    required double totalExpenses,
+  }) async {
+    throw UnimplementedError('PDFService ainda não implementado');
+  }
+
+  /// Gera relatório consolidado em PDF
+  static Future<File> generateConsolidatedReport({
+    required String title,
+    String? period,
+    Map<String, String>? filters,
+    required double totalIncome,
+    required double totalExpenses,
+  }) async {
+    throw UnimplementedError('PDFService ainda não implementado');
+  }
+}

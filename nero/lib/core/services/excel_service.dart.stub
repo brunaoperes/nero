@@ -1,0 +1,33 @@
+import 'dart:io';
+
+/// TODO: Implementar quando os modelos TaskModel e TransactionModel estiverem disponíveis
+
+/// Serviço de geração de Excel (STUB)
+class ExcelService {
+  /// Gera relatório de tarefas em Excel
+  static Future<File> generateTasksReport({
+    required String title,
+    String? period,
+    Map<String, String>? filters,
+  }) async {
+    throw UnimplementedError('ExcelService ainda não implementado');
+  }
+
+  /// Gera relatório financeiro em Excel
+  static Future<File> generateFinanceReport({
+    required String title,
+    String? period,
+    Map<String, String>? filters,
+  }) async {
+    throw UnimplementedError('ExcelService ainda não implementado');
+  }
+
+  /// Gera relatório consolidado em Excel
+  static Future<File> generateConsolidatedReport({
+    required String title,
+    String? period,
+    Map<String, String>? filters,
+  }) async {
+    throw UnimplementedError('ExcelService ainda não implementado');
+  }
+}

@@ -1,0 +1,17 @@
+# Build configuration for build_runner
+targets:
+  $default:
+    builders:
+      json_serializable:
+        options:
+          # Options for json_serializable
+          explicit_to_json: true
+          field_rename: snake
+
+      freezed:
+        options:
+          # Options for freezed
+
+      riverpod_generator:
+        options:
+          # Options for riverpod_generator
