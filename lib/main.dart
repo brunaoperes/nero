@@ -116,9 +116,9 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              '🔧 v1.0.3 - URL Corrigida!',
+              '🎉 Gestor Pessoal v1.0.7 - Atualizado!',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.orange),
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.green),
             ),
             const SizedBox(height: 8),
             const Text(
