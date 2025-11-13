@@ -8,6 +8,7 @@
   "changelog": [
     "🎉 Teste de atualização automática!",
     "Versão atualizada para 1.0.1",
-    "Pequena mudança visual no texto"
+    "Pequena mudança visual no texto",
+    "Sistema de download com barra de progresso"
   ]
 }
