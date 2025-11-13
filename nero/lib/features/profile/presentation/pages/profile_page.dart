@@ -573,6 +573,16 @@ class ProfilePage extends ConsumerWidget {
           _buildDivider(isDark),
           _buildSettingsTile(
             context,
+            icon: Icons.system_update,
+            title: 'Buscar Atualizações',
+            subtitle: 'Verificar novas versões',
+            color: const Color(0xFF2196F3),
+            isDark: isDark,
+            onTap: () => context.push('/profile/updates'),
+          ),
+          _buildDivider(isDark),
+          _buildSettingsTile(
+            context,
             icon: Icons.info_outline,
             title: 'Versão do Aplicativo',
             subtitle: 'v1.0.0',

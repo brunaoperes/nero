@@ -30,6 +30,7 @@ import '../../features/profile/presentation/pages/backup_page.dart';
 import '../../features/profile/presentation/pages/help_center_page.dart';
 import '../../features/profile/presentation/pages/feedback_page.dart';
 import '../../features/profile/presentation/pages/privacy_policy_page.dart';
+import '../../features/profile/presentation/pages/updates_page.dart';
 import '../../features/search/presentation/pages/global_search_page.dart';
 import '../../features/companies/presentation/pages/company_form_page.dart';
 import '../constants/app_constants.dart';
@@ -247,6 +248,11 @@ final routerProvider = Provider<GoRouter>((ref) {
                 path: 'feedback',
                 name: 'feedback',
                 builder: (context, state) => const FeedbackPage(),
+              ),
+              GoRoute(
+                path: 'updates',
+                name: 'updates',
+                builder: (context, state) => const UpdatesPage(),
               ),
               GoRoute(
                 path: 'privacy',
