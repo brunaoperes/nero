@@ -44,6 +44,10 @@ class AppUpdateService {
 
   /// Verifica se é necessário checar atualizações
   Future<bool> shouldCheckForUpdates() async {
+    // MODO TESTE: Sempre permite checagem
+    return true;
+
+    /* DESCOMENTE PARA USAR INTERVALO DE 24H EM PRODUÇÃO:
     try {
       final lastCheckStr = await _storage.read(key: _lastCheckKey);
       if (lastCheckStr == null) return true;
@@ -54,6 +58,7 @@ class AppUpdateService {
     } catch (e) {
       return true; // Em caso de erro, permitir checagem
     }
+    */
   }
 
   /// Marca que a checagem foi realizada
