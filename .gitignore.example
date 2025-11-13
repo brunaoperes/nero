@@ -1,0 +1,172 @@
+# Arquivo .gitignore sugerido para o projeto
+# Copie estas linhas para o seu .gitignore principal
+
+# ========================================
+# IMPORTANTE: Arquivos de Assinatura
+# NUNCA commite estes arquivos!
+# ========================================
+
+# Keystores de assinatura
+*.jks
+*.keystore
+upload-keystore.jks
+android/app/upload-keystore.jks
+
+# Configurações de assinatura
+android/key.properties
+android/app/key.properties
+key.properties
+
+# ========================================
+# Flutter/Dart
+# ========================================
+
+# Diretórios de build
+**/build/
+**/.dart_tool/
+**/.packages
+
+# Arquivos gerados
+*.g.dart
+*.freezed.dart
+*.mocks.dart
+
+# ========================================
+# Android
+# ========================================
+
+# Gradle
+.gradle/
+**/android/local.properties
+**/android/.gradle/
+**/android/captures/
+**/android/gradlew
+**/android/gradlew.bat
+**/android/gradle-wrapper.jar
+
+# Android Studio
+.idea/
+*.iml
+*.iws
+*.ipr
+**/.idea/
+
+# APKs de build (opcional - remover se quiser versioná-los)
+*.apk
+*.aab
+
+# ========================================
+# iOS
+# ========================================
+
+# Xcode
+**/ios/**/*.mode1v3
+**/ios/**/*.mode2v3
+**/ios/**/*.moved-aside
+**/ios/**/*.pbxuser
+**/ios/**/*.perspectivev3
+**/ios/**/*sync/
+**/ios/**/.sconsign.dblite
+**/ios/**/.tags*
+**/ios/**/.vagrant/
+**/ios/**/DerivedData/
+**/ios/**/Icon?
+**/ios/**/Pods/
+**/ios/**/.symlinks/
+**/ios/**/profile
+**/ios/**/xcuserdata
+**/ios/.generated/
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/app.flx
+**/ios/Flutter/app.zip
+**/ios/Flutter/flutter_assets/
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/ServiceDefinitions.json
+**/ios/Runner/GeneratedPluginRegistrant.*
+
+# ========================================
+# Arquivos do Sistema
+# ========================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.nfs*
+
+# ========================================
+# IDEs e Editores
+# ========================================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# IntelliJ
+*.iml
+.idea/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# ========================================
+# Logs e Temporários
+# ========================================
+
+*.log
+*.tmp
+*.temp
+
+# ========================================
+# Arquivos de Configuração Sensíveis
+# ========================================
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.*.local
+
+# Configurações locais
+local.properties
+
+# Firebase
+**/google-services.json.backup
+**/GoogleService-Info.plist.backup
+
+# ========================================
+# Auto-Update (Arquivos Locais)
+# ========================================
+
+# APKs de teste local (se não quiser versionar)
+# updates/*.apk
+
+# Arquivos temporários de atualização
+# (Já são limpos automaticamente pelo app)
+*.apk.tmp
+
+# ========================================
+# Documentação de Exemplo
+# ========================================
+
+# Se não quiser commitar exemplos de keystore
+# android/key.properties.example

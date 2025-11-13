@@ -3,8 +3,8 @@
   "versionCode": 1,
   "minVersionCode": 1,
   "mandatory": false,
-  "apkUrl": "https://github.com/brunotrader/gestor_pessoal_ia/releases/download/v1.0.0/gestor-pessoal-v1.0.0.apk",
-  "apkSha256": "9D0FD06FF4BDB98641E560E1D62E508272B1CC987DA628E2CA8722F989DCAF8E",
+  "apkUrl": "https://github.com/brunaoperes/nero/releases/download/v1.0.0/gestor-pessoal-v1.0.0.apk",
+  "apkSha256": "3216B526263EF9A1CCC74C9F51694B0CFC540DE42831349A867BF841CB2F845D",
   "changelog": [
     "Primeira versão do Gestor Pessoal",
     "Sistema de auto-atualização implementado",

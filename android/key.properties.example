@@ -1,0 +1,78 @@
+# Configuração de Assinatura Android
+#
+# IMPORTANTE:
+# 1. Copie este arquivo para 'key.properties' (sem .example)
+# 2. Preencha com suas informações reais
+# 3. NUNCA commite o arquivo key.properties real no Git!
+# 4. O arquivo key.properties deve estar em .gitignore
+
+# Senha do arquivo keystore
+storePassword=SUA_SENHA_AQUI
+
+# Senha da chave dentro do keystore
+keyPassword=SUA_SENHA_AQUI
+
+# Alias da chave (nome usado ao criar a keystore)
+keyAlias=upload
+
+# Caminho COMPLETO para o arquivo keystore
+#
+# Windows (use barras duplas \\):
+# storeFile=C:\\Users\\SeuUsuario\\upload-keystore.jks
+#
+# Linux/Mac:
+# storeFile=/home/usuario/upload-keystore.jks
+#
+# Ou caminho relativo ao projeto:
+# storeFile=../upload-keystore.jks
+
+storeFile=CAMINHO_COMPLETO_PARA_SUA_KEYSTORE
+
+# ============================================
+# EXEMPLO DE CONFIGURAÇÃO COMPLETA
+# ============================================
+
+# Windows:
+# storePassword=minhasenha123
+# keyPassword=minhasenha123
+# keyAlias=upload
+# storeFile=C:\\Users\\Bruno\\Documents\\keystores\\gestor-pessoal.jks
+
+# Linux/Mac:
+# storePassword=minhasenha123
+# keyPassword=minhasenha123
+# keyAlias=upload
+# storeFile=/home/bruno/keystores/gestor-pessoal.jks
+
+# ============================================
+# GUIA RÁPIDO
+# ============================================
+
+# 1. Criar keystore:
+#
+#    keytool -genkey -v -keystore ~/upload-keystore.jks \
+#      -storetype JKS -keyalg RSA -keysize 2048 \
+#      -validity 10000 -alias upload
+#
+# 2. Copiar este arquivo:
+#
+#    cp key.properties.example key.properties
+#
+# 3. Editar key.properties com suas informações
+#
+# 4. Build release:
+#
+#    flutter build apk --release
+
+# ============================================
+# SEGURANÇA
+# ============================================
+
+# ✅ Faça backup da keystore
+# ✅ Use senhas fortes
+# ✅ Guarde senhas em local seguro
+# ✅ Adicione key.properties ao .gitignore
+# ✅ NUNCA commite a keystore no Git
+
+# Para mais informações, veja:
+# docs/ANDROID_SIGNING_SETUP.md
