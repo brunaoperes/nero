@@ -14,7 +14,7 @@ import 'installer_detector.dart';
 /// Serviço responsável por gerenciar atualizações do app
 class AppUpdateService {
   static const String _manifestUrl =
-      'https://raw.githubusercontent.com/brunaoperes/nero/main/updates/latest.json';
+      'https://github.com/brunaoperes/nero/raw/main/updates/latest.json';
 
   static const Duration _checkInterval = Duration(hours: 24);
   static const String _lastCheckKey = 'last_update_check';
