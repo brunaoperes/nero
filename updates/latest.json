@@ -1,14 +1,14 @@
 {
-  "versionName": "1.0.7",
-  "versionCode": 8,
+  "versionName": "1.0.8",
+  "versionCode": 9,
   "minVersionCode": 1,
   "mandatory": false,
-  "apkUrl": "https://github.com/brunaoperes/nero/releases/download/v1.0.7/gestor-pessoal-v1.0.7.apk",
-  "apkSha256": "715FEB579DF5DC41D3E4CD58DC4A9FE3DBD76C43697CADC8952371B23D89E625",
+  "apkUrl": "https://github.com/brunaoperes/nero/releases/download/v1.0.8/gestor-pessoal-v1.0.8.apk",
+  "apkSha256": "ED072B41108C871DA68C93395E74CB75096AFFAB8A230FFDFFC020E72B3EADD3",
   "changelog": [
-    "🎉 Nova atualização disponível!",
-    "✨ Interface atualizada com texto verde",
-    "🔄 Sistema de auto-atualização funcionando",
-    "🚀 Teste de atualização v1.0.6 → v1.0.7"
+    "🚀 ATUALIZAÇÃO FUNCIONANDO!",
+    "✨ Texto roxo mostrando sucesso",
+    "🔧 Corrigido: versionCode agora é 9",
+    "🎉 Sistema de auto-atualização completo!"
   ]
 }
