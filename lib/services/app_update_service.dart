@@ -44,10 +44,6 @@ class AppUpdateService {
 
   /// Verifica se é necessário checar atualizações
   Future<bool> shouldCheckForUpdates() async {
-    // MODO TESTE: Sempre permite checagem
-    return true;
-
-    /* DESCOMENTE PARA USAR INTERVALO DE 24H EM PRODUÇÃO:
     try {
       final lastCheckStr = await _storage.read(key: _lastCheckKey);
       if (lastCheckStr == null) return true;
@@ -58,7 +54,6 @@ class AppUpdateService {
     } catch (e) {
       return true; // Em caso de erro, permitir checagem
     }
-    */
   }
 
   /// Marca que a checagem foi realizada
@@ -87,7 +82,7 @@ class AppUpdateService {
     try {
       final url = customManifestUrl ?? _manifestUrl;
 
-      debugPrint('🔍 DEBUG: Buscando atualizações em: $url');
+      debugPrint('Buscando atualizações em: $url');
 
       final response = await _dio.get(
         url,
@@ -100,34 +95,27 @@ class AppUpdateService {
         ),
       );
 
-      debugPrint('🔍 DEBUG: Status code: ${response.statusCode}');
-      debugPrint('🔍 DEBUG: Response type: ${response.data.runtimeType}');
-
       if (response.statusCode == 200) {
-        debugPrint('🔍 DEBUG: Resposta recebida, parseando JSON...');
-
         // Parse manual do JSON
         final jsonData = jsonDecode(response.data as String);
         final updateInfo = UpdateInfo.fromJson(jsonData);
         await _markCheckCompleted();
 
-        debugPrint('✅ DEBUG: Informações de atualização recebidas: ${updateInfo.versionName} (${updateInfo.versionCode})');
+        debugPrint('Informações de atualização recebidas: ${updateInfo.versionName} (${updateInfo.versionCode})');
 
         return updateInfo;
       } else {
-        _lastError = 'HTTP ${response.statusCode}: ${response.statusMessage}\nResponse: ${response.data}';
-        debugPrint('❌ DEBUG: Falha ao buscar atualizações: ${response.statusCode}');
-        debugPrint('❌ DEBUG: Response body: ${response.data}');
+        _lastError = 'HTTP ${response.statusCode}: ${response.statusMessage}';
+        debugPrint('Falha ao buscar atualizações: ${response.statusCode}');
         return null;
       }
     } on DioException catch (e) {
       _lastError = 'DioException: ${e.type.toString()} - ${e.message}';
-      debugPrint('❌ DEBUG: Erro de rede ao buscar atualizações: ${e.message}');
-      debugPrint('❌ DEBUG: Tipo de erro: ${e.type}');
+      debugPrint('Erro de rede ao buscar atualizações: ${e.message}');
       return null;
     } catch (e) {
       _lastError = 'Exception: $e';
-      debugPrint('❌ DEBUG: Erro ao buscar atualizações: $e');
+      debugPrint('Erro ao buscar atualizações: $e');
       return null;
     }
   }
@@ -140,41 +128,29 @@ class AppUpdateService {
       final packageInfo = await PackageInfo.fromPlatform();
       final currentVersionCode = int.tryParse(packageInfo.buildNumber) ?? 0;
 
-      debugPrint('🔍 DEBUG: Versão instalada: ${packageInfo.version} (code: $currentVersionCode)');
-
       final updateInfo = await checkForUpdates(
         customManifestUrl: customManifestUrl,
       );
 
-      if (updateInfo == null) {
-        debugPrint('❌ DEBUG: updateInfo é null - não conseguiu buscar do servidor');
-        return null;
-      }
-
-      debugPrint('📦 DEBUG: Versão disponível: ${updateInfo.versionName} (code: ${updateInfo.versionCode})');
+      if (updateInfo == null) return null;
 
       // Verifica se a versão foi ignorada pelo usuário
       final skippedVersion = await _storage.read(key: _updateSkippedKey);
-      debugPrint('⏭️  DEBUG: Versão ignorada: $skippedVersion');
-
       if (skippedVersion == updateInfo.versionCode.toString() &&
           !updateInfo.mandatory) {
-        debugPrint('🚫 Atualização ${updateInfo.versionName} foi ignorada pelo usuário');
+        debugPrint('Atualização ${updateInfo.versionName} foi ignorada pelo usuário');
         return null;
       }
 
       // Verifica se há atualização disponível
-      debugPrint('🔢 DEBUG: Comparando $currentVersionCode < ${updateInfo.versionCode}');
-
       if (updateInfo.hasUpdate(currentVersionCode)) {
-        debugPrint('✅ DEBUG: Atualização disponível!');
         return updateInfo;
       }
 
-      debugPrint('ℹ️  App está na versão mais recente');
+      debugPrint('App está na versão mais recente');
       return null;
     } catch (e) {
-      debugPrint('❌ Erro ao verificar atualização disponível: $e');
+      debugPrint('Erro ao verificar atualização disponível: $e');
       return null;
     }
   }

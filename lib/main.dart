@@ -116,12 +116,6 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              '🎉 v1.0.15 - AUTO-ATUALIZAÇÃO FUNCIONANDO!',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.green),
-            ),
-            const SizedBox(height: 8),
-            const Text(
               'Você pressionou o botão:',
             ),
             Text(

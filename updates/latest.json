@@ -1,14 +1,14 @@
 {
-  "versionName": "1.0.15",
-  "versionCode": 16,
+  "versionName": "1.0.16",
+  "versionCode": 17,
   "minVersionCode": 1,
   "mandatory": false,
-  "apkUrl": "https://github.com/brunaoperes/nero/releases/download/v1.0.15/gestor-pessoal-v1.0.15.apk",
-  "apkSha256": "B4CD756986D2F5864479F039ACD97A58B05BC9E5B197CFA1C0B9D385867F05CE",
+  "apkUrl": "https://github.com/brunaoperes/nero/releases/download/v1.0.16/gestor-pessoal-v1.0.16.apk",
+  "apkSha256": "E532CC6126C14893DC9D1C4CF0F5A20072AF7EABAEB3F39B2BC4EDF0B932576A",
   "changelog": [
-    "🎉 SISTEMA DE AUTO-ATUALIZAÇÃO FUNCIONANDO!",
-    "✅ Correção aplicada: ResponseType.plain",
-    "🚀 Agora você pode atualizar automaticamente",
-    "💚 Primeira atualização automática bem-sucedida!"
+    "Versão de produção",
+    "Sistema de auto-atualização completo",
+    "Verificação automática a cada 24 horas",
+    "Instalação segura com verificação SHA-256"
   ]
 }
