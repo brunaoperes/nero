@@ -116,7 +116,13 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Você pressionou o botão (v1.0.1):',
+              '🎉 Versão 1.0.3 - Auto-Update Funcionando! 🎉',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              'Você pressionou o botão:',
             ),
             Text(
               '$_counter',
