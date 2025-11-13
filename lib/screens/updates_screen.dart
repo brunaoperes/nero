@@ -99,17 +99,59 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
     );
   }
 
-  void _showUpToDateMessage() {
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Row(
-          children: [
-            Icon(Icons.check_circle, color: Colors.white),
-            SizedBox(width: 8),
-            Text('Você já está na versão mais recente!'),
-          ],
+  void _showUpToDateMessage() async {
+    // DEBUG: Mostrar informações detalhadas
+    final packageInfo = await _updateService.getCurrentVersion();
+
+    UpdateInfo? updateInfo;
+
+    updateInfo = await _updateService.checkForUpdates();
+
+    final errorMessage = _updateService.lastError ?? '';
+
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('🔍 DEBUG - Informações Detalhadas'),
+        content: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text('📱 VERSÃO INSTALADA:', style: TextStyle(fontWeight: FontWeight.bold)),
+              Text('  Nome: ${packageInfo['versionName']}'),
+              Text('  Code: ${packageInfo['versionCode']}'),
+              SizedBox(height: 16),
+              Text('🌐 TENTANDO BUSCAR:', style: TextStyle(fontWeight: FontWeight.bold)),
+              Text('  https://raw.githubusercontent.com/brunaoperes/nero/main/updates/latest.json', style: TextStyle(fontSize: 10)),
+              SizedBox(height: 16),
+              Text('🌐 VERSÃO NO SERVIDOR:', style: TextStyle(fontWeight: FontWeight.bold)),
+              if (updateInfo != null) ...[
+                Text('  ✅ SUCESSO!', style: TextStyle(color: Colors.green)),
+                Text('  Nome: ${updateInfo.versionName}'),
+                Text('  Code: ${updateInfo.versionCode}'),
+                Text('  URL: ${updateInfo.apkUrl}', style: TextStyle(fontSize: 10)),
+              ] else ...[
+                Text('  ❌ Não conseguiu buscar do servidor!', style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold)),
+                if (errorMessage.isNotEmpty) ...[
+                  SizedBox(height: 8),
+                  Text('ERRO DETALHADO:', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.red)),
+                  Text('  $errorMessage', style: TextStyle(fontSize: 11, color: Colors.red)),
+                ],
+              ],
+              SizedBox(height: 16),
+              Text('🔢 COMPARAÇÃO:', style: TextStyle(fontWeight: FontWeight.bold)),
+              Text('  ${packageInfo['versionCode']} < ${updateInfo?.versionCode ?? '?'}'),
+              Text('  Resultado: ${updateInfo != null && (packageInfo['versionCode'] as int) < updateInfo.versionCode ? '✅ Há atualização' : '❌ Não há atualização'}'),
+            ],
+          ),
         ),
-        backgroundColor: Colors.green,
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Fechar'),
+          ),
+        ],
       ),
     );
   }
